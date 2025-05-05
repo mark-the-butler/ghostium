@@ -1,0 +1,19 @@
+[project]
+name = "ghostium"
+version = "0.1.0"
+description = "A serverless proxy that lets you read Medium articles without hitting the Medium paywall — by automatically fetching and returning the Freedium version of the article without visiting the Freedium domain directly"
+authors = [
+    {name = "Mark Butler",email = "mysteryboy7300@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi (==0.115.12)",
+    "mangum (==0.19.0)",
+    "uvicorn[standard] (==0.34.2)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
