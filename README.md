@@ -29,6 +29,7 @@ Currently in early development. Coming soon:
 - [x] Project setup with Poetry
 - [ ] FastAPI routes for proxying articles
 - [ ] Dockerized Lambda container
+- [x] Dockerized Lambda container
 - [ ] Terraform deployment to AWS
 - [ ] Frontend or bookmarklet for easy use
 
@@ -58,14 +59,24 @@ You’ll also get Swagger docs at [http://localhost:8000/docs](http://localhost:
 > Great for simulating the Lambda container runtime.
 
 ```bash
-# Build the container
-docker build -t ghostium .
+# Build the dev container image
+docker build -t ghostium-dev --target=dev .
 
-# Run the container
-docker run -p 8000:8000 ghostium
+# Or build the production Lambda container image
+docker build -t ghostium-prod --target=production .
 ```
 
-Then visit [http://localhost:8000](http://localhost:8000) in your browser!
+```bash
+# Run the dev container
+docker run -p 8000:8000 ghostium-dev
+```
+
+```bash
+# Run the prod container (requires test event)
+docker run -p 9000:8080 ghostium-prod
+```
+
+> Note: When running the production container, you need to invoke it using a valid AWS Lambda test event to simulate Lambda invocation.
 
 ---
 
