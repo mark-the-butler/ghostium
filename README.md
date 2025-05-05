@@ -42,9 +42,11 @@ Currently in early development. Coming soon:
 # Install dependencies
 poetry install
 
-# Run the FastAPI dev server
-poetry run uvicorn app.main:app --reload --port 8000
+# Run the FastAPI dev server using the bin/dev.py script
+poetry run ghostium-dev
 ```
+
+This uses a script in the `bin/` directory to run Uvicorn with hot reloading — great for local development.
 
 Once running, visit [http://localhost:8000](http://localhost:8000)  
 You’ll also get Swagger docs at [http://localhost:8000/docs](http://localhost:8000/docs)
@@ -64,3 +66,10 @@ docker run -p 8000:8000 ghostium
 ```
 
 Then visit [http://localhost:8000](http://localhost:8000) in your browser!
+
+---
+
+## 📦 Environment Management
+
+This project includes a `.tool-versions` file for use with [asdf](https://asdf-vm.com/).  
+Make sure you have `asdf` and the required plugins installed to match the dev environment.
