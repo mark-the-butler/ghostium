@@ -1,6 +1,28 @@
-.venv/
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*.egg
+*.egg-info/
 dist/
-.env
-.env.*
+build/
+
+# Poetry
+.venv/
+poetry.lock
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+*.log
+*.pid
+
+# Terraform (when we get there)
+*.tfstate
+*.tfstate.backup
+.terraform/
+terraform.tfvars
