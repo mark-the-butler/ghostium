@@ -8,7 +8,6 @@ build/
 
 # Poetry
 .venv/
-poetry.lock
 
 # VS Code
 .vscode/
